@@ -1,15 +1,15 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selectorlib import Extractor
+import time,random
 
 browser_driver = None
 
 def init():
-    global browser_driver 
-    ChromeOptions = webdriver.ChromeOptions()
-    ChromeOptions.add_argument('--headless')
-    executable_path=ChromeDriverManager().install()
-    browser_driver = webdriver.Chrome(executable_path, options=ChromeOptions)
+    global browser_driver
+    options = webdriver.FirefoxOptions()
+    options.headless = True
+    browser_driver = webdriver.Firefox(options=options)
 
 
 def browse_and_extract(url,template_type):
@@ -17,8 +17,18 @@ def browse_and_extract(url,template_type):
     raw_html = browser_driver.page_source
     e = Extractor.from_yaml_string(get_template(template_type))
     raw_data = e.extract(raw_html)
-    if raw_data is not None:
-        filtered_data = [item for item in raw_data['results'] if None not in item.values()]
+    filtered_data = []
+    if raw_data['results'] is not None:
+        for item in raw_data['results']:
+            if item['title'] is None:
+                item['title'] = ''
+            if item['image'] is None:
+                item['image'] = ''
+            if item['deal'] is None:
+                item['deal'] = ''
+            if item['link'] is None:
+                item['link'] = ''
+            filtered_data.append(item)
         return filtered_data
     return []
 
