@@ -1,6 +1,6 @@
-# README
+# Web Scrapping using selectorlib in Python
 
-This repository contains a Flask web application for scraping data from Amazon India using Selenium and Selectorlib.
+An Flask web application for scraping data from websites using Selenium and Selectorlib.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ This repository contains a Flask web application for scraping data from Amazon I
 
 ## Setup
 
-1. Clone this repository: `git clone https://github.com/username/repo.git`
+1. Clone this repository: `git clone https://github.com/sjnaveenkumar/repo.git`
 2. Install the required packages: `pip install -r requirements.txt`
 3. Run the Flask application: `python app.py`
 
@@ -50,3 +50,7 @@ This is the Selectorlib template file for extracting data from the top deals pag
 ## Credits
 
 This project was created by Naveen. The Selectorlib library was created by [Scrapinghub](https://github.com/scrapinghub/selectorlib).
+
+## Note
+
+This project is designed to follow the robots.txt policy of Amazon website.
