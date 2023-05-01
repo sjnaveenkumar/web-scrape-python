@@ -1,6 +1,6 @@
 
 from flask import Flask,request
-from scrape_service import *
+from scrape_service import init
 from search import *
 from deals import get_deals
 
