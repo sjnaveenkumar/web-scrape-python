@@ -1,4 +1,4 @@
-FROM python:3.9.16-slim-buster
+FROM --platform=linux/amd64 python:3.9.16-slim-buster
 
 # Install Firefox and geckodriver
 RUN apt-get update && apt-get install -y firefox-esr && \
