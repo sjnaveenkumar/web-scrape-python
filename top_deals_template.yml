@@ -1,0 +1,22 @@
+results:
+    css: 'div:is(.deals-shoveler) ul li'
+    xpath: null
+    multiple: true
+    type: Text
+    children:
+        title:
+            css: 'li[role="listitem"] span.a-truncate-cut'
+            xpath: null
+            type: Text
+        image:
+            css: img._deals-shoveler-v2_style_dealImage__3nlqg
+            xpath: null
+            type: Image
+        deal:
+            css: span._deals-shoveler-v2_style_badgeLabel__USQoX
+            xpath: null
+            type: Text
+        link:
+            css: a.a-link-normal
+            xpath: null
+            type: Link
